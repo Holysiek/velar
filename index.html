@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="VELAR Przeprowadzki i Transport Zielona Góra. Sprawne przeprowadzki mieszkań i biur, transport gabarytów. Obsługujemy całe województwo lubuskie. Bezpłatna wycena!">
+<meta name="keywords" content="przeprowadzki Zielona Góra, transport Zielona Góra, przeprowadzki lubuskie, firma przeprowadzkowa Zielona Góra, transport gabarytów Zielona Góra">
+<title>VELAR – Przeprowadzki i Transport Zielona Góra | Woj. Lubuskie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --card: #161616;
+    --border: #252525;
+    --gold: #c9a84c;
+    --gold-light: #e4c878;
+    --gold-dim: rgba(201,168,76,0.15);
+    --white: #f5f0e8;
+    --muted: #888;
+    --text: #d4cfc5;
+    --radius: 4px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--white); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--black) !important;
+    padding: 10px 22px;
+    border-radius: var(--radius);
+    font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 120px);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    color: var(--white);
+    max-width: 900px;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  h1 .accent { color: var(--gold); }
+  .hero-sub {
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 16px 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-stats {
+    position: absolute;
+    right: 48px;
+    bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: right;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+  .scroll-indicator::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(var(--gold), transparent);
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* USP BAR */
+  .usp-bar {
+    background: var(--gold);
+    overflow: hidden;
+  }
+  .usp-scroll {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+    white-space: nowrap;
+  }
+  .usp-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 32px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+  .usp-item::after {
+    content: '◆';
+    font-size: 8px;
+    opacity: 0.5;
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 48px; }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  /* O NAS */
+  #o-nas {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .about-text p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+  .feature-card:hover { border-color: var(--gold); }
+  .feature-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+  .feature-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+  .feature-card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* USŁUGI */
+  .services-wrap { max-width: 1200px; margin: 0 auto; }
+  .services-header { margin-bottom: 56px; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .service-item {
+    background: var(--dark);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+  .service-item::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--gold);
+    transition: height 0.3s;
+  }
+  .service-item:hover { background: var(--card); }
+  .service-item:hover::before { height: 100%; }
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    transition: color 0.2s;
+  }
+  .service-item:hover .service-num { color: var(--gold-dim); }
+  .service-item h3 { font-size: 22px; margin-bottom: 12px; }
+  .service-item p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .tag {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--muted);
+  }
+
+  /* ZASIĘG */
+  #zasieg {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .zasieg-inner { max-width: 1200px; margin: 0 auto; }
+  .zasieg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 56px;
+  }
+  .map-visual {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    text-align: center;
+  }
+  .map-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px dashed var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+  }
+  .map-circle::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .map-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(201,168,76,0.2);
+  }
+  .map-label { margin-top: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .map-radius { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--gold); display: block; margin-top: 4px; }
+  .city-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .city-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); }
+  .city-list li::before { content: '→'; color: var(--gold); font-size: 12px; }
+
+  /* KALKULATOR */
+  #kalkulator { background: var(--black); }
+  .calc-wrap { max-width: 900px; margin: 0 auto; }
+  .calc-header { margin-bottom: 48px; }
+  .calc-box {
+    background: var(--dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .calc-form { padding: 48px; display: grid; gap: 32px; }
+  .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .calc-group { display: flex; flex-direction: column; gap: 10px; }
+  .calc-group label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .calc-group select,
+  .calc-group input {
+    background: var(--black);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+  }
+  .calc-group select:focus,
+  .calc-group input:focus { border-color: var(--gold); }
+  .select-wrapper { position: relative; }
+  .select-wrapper::after {
+    content: '▾';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    pointer-events: none;
+  }
+  .free-badges { display: flex; gap: 12px; flex-wrap: wrap; padding: 20px 0; border-top: 1px solid var(--border); }
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: var(--radius);
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+  .badge::before { content: '✓'; font-weight: 700; }
+  .calc-result {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 40px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .result-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .price-display { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--gold); line-height: 1; }
+  .price-unit { font-size: 20px; color: var(--muted); }
+  .price-breakdown { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  /* KONTAKT */
+  #kontakt {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+  }
+  .contact-inner { max-width: 1200px; margin: 0 auto; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    margin-top: 56px;
+    align-items: start;
+  }
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-detail:first-of-type { padding-top: 0; }
+  .contact-detail-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .contact-detail-value {
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-detail-value:hover { color: var(--gold); }
+  .contact-hours {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .contact-hours h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .contact-hours p { font-size: 14px; color: var(--muted); }
+  .contact-hours strong { color: var(--white); }
+
+  /* FORM */
+  .contact-form { display: grid; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-group label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    resize: vertical;
+    width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+  .form-select-wrap { position: relative; }
+  .form-select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    pointer-events: none;
+  }
+  .file-upload-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: var(--card);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--muted);
+    transition: border-color 0.2s;
+  }
+  .file-upload-label:hover { border-color: var(--gold); color: var(--gold); }
+  input[type="file"] { display: none; }
+  .required { color: var(--gold); }
+  .form-success {
+    display: none;
+    padding: 20px 24px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: var(--radius);
+    color: var(--gold);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 48px;
+    text-align: center;
+  }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 8px; color: var(--gold); margin-bottom: 16px; }
+  .footer-tagline { font-size: 13px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 32px; }
+  .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 32px; flex-wrap: wrap; }
+  .footer-links a { color: var(--muted); text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 12px; color: var(--border); letter-spacing: 1px; }
+
+  /* PHONE FLOAT */
+  .phone-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 99;
+    background: var(--gold);
+    color: var(--black);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(201,168,76,0.4);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 24px rgba(201,168,76,0.4); }
+    50% { box-shadow: 0 4px 40px rgba(201,168,76,0.7); }
+  }
+
+  /* FADE UP */
+  .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.animate { opacity: 0; transform: translateY(30px); }
+  .fade-up.animate.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; flex-direction: column; }
+    .nav-links.open {
+      display: flex;
+      position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: var(--black);
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+      gap: 20px;
+    }
+    .hamburger { display: flex; }
+    #hero { padding: 120px 24px 60px; }
+    .hero-stats { display: none; }
+    section { padding: 60px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-features { grid-template-columns: 1fr 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .zasieg-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .calc-row { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .calc-form { padding: 24px; }
+    .calc-result { padding: 24px; }
+    footer { padding: 40px 24px; }
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 48px; }
+    .about-features { grid-template-columns: 1fr; }
+    .city-list { grid-template-columns: 1fr; }
+    .free-badges { flex-direction: column; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">VEL<span>AR</span></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#o-nas">O nas</a></li>
+    <li><a href="#uslugi">Usługi</a></li>
+    <li><a href="#zasieg">Zasięg</a></li>
+    <li><a href="#kalkulator">Wycena</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-tag">Zielona Góra · Województwo Lubuskie</div>
+  <h1>VELAR:<br>Sprawne <span class="accent">Przeprowadzki</span><br>i Transport</h1>
+  <p class="hero-sub">Młoda siła, punktualność i bezpieczny przewóz. Obsługujemy Zieloną Górę i całe województwo lubuskie.</p>
+  <div class="hero-actions">
+    <a href="#kalkulator" class="btn-primary">⟶ Oblicz koszt przeprowadzki</a>
+    <a href="tel:576407870" class="btn-secondary">☎ 576 407 870</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">0 zł</div>
+      <div class="stat-label">Dopłata za weekend</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">0 zł</div>
+      <div class="stat-label">Last minute</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100 km</div>
+      <div class="stat-label">Zasięg działania</div>
+    </div>
+  </div>
+  <div class="scroll-indicator">Przewiń</div>
+</section>
+
+<!-- USP BAR -->
+<div class="usp-bar" aria-hidden="true">
+  <div class="usp-scroll">
+    <span class="usp-item">Brak dopłat za weekendy</span>
+    <span class="usp-item">Brak dopłat Last Minute</span>
+    <span class="usp-item">Folia stretch w cenie</span>
+    <span class="usp-item">Pasy transportowe w cenie</span>
+    <span class="usp-item">Darmowa wycena Zielona Góra</span>
+    <span class="usp-item">Obsługa B2B i prywatna</span>
+    <span class="usp-item">Brak dopłat za weekendy</span>
+    <span class="usp-item">Brak dopłat Last Minute</span>
+    <span class="usp-item">Folia stretch w cenie</span>
+    <span class="usp-item">Pasy transportowe w cenie</span>
+    <span class="usp-item">Darmowa wycena Zielona Góra</span>
+    <span class="usp-item">Obsługa B2B i prywatna</span>
+  </div>
+</div>
+
+<!-- O NAS -->
+<section id="o-nas">
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <div class="section-label">Kim jesteśmy</div>
+      <h2>Rzetelność i terminowość to nasz standard</h2>
+      <p>Firma VELAR to zespół specjalistów stawiających na rzetelność i terminowość. Nasza ekipa to młodzi, aktywni fizycznie pracownicy – co gwarantuje dynamikę pracy i niezawodność, szczególnie w budynkach bez windy.</p>
+      <p>Specjalizujemy się w transporcie gabarytów i przeprowadzkach dla osób prywatnych oraz firm (B2B). Działamy w Zielonej Górze i całym województwie lubuskim w zasięgu do 100 km.</p>
+      <a href="#kontakt" class="btn-primary" style="margin-top:24px;">⟶ Skontaktuj się z nami</a>
+    </div>
+    <div class="about-features fade-up">
+      <div class="feature-card">
+        <span class="feature-icon">🏋️</span>
+        <h4>Młoda ekipa</h4>
+        <p>Aktywni fizycznie pracownicy gotowi na każde wyzwanie, w tym budynki bez wind.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">⏱️</span>
+        <h4>Punktualność</h4>
+        <p>Szanujemy Twój czas. Przyjeżdżamy dokładnie w umówionym terminie.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🛡️</span>
+        <h4>Bezpieczny przewóz</h4>
+        <p>Folia stretch, pasy transportowe i profesjonalne zabezpieczenie – zawsze w cenie.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💰</span>
+        <h4>Uczciwa cena</h4>
+        <p>Brak ukrytych dopłat za weekendy i last minute. Cena podana z góry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USŁUGI -->
+<section id="uslugi" style="background:var(--black);">
+  <div class="services-wrap">
+    <div class="services-header fade-up">
+      <div class="section-label">Co oferujemy</div>
+      <h2>Nasze usługi</h2>
+      <p style="color:var(--muted);max-width:520px;margin-top:8px;">Kompleksowa obsługa transportowa w Zielonej Górze i okolicach – od przeprowadzek po utylizację gabarytów.</p>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-item">
+        <div class="service-num">01</div>
+        <h3>Przeprowadzki mieszkań i biur</h3>
+        <p>Kompleksowa obsługa przeprowadzkowa w Zielonej Górze i okolicach. Pakowanie, załadunek, transport i rozładunek. Obsługujemy zarówno klientów prywatnych, jak i firmy (B2B).</p>
+        <div class="service-tags">
+          <span class="tag">Mieszkania</span>
+          <span class="tag">Biura</span>
+          <span class="tag">B2B</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">02</div>
+        <h3>Pomoc w noszeniu i wnoszeniu</h3>
+        <p>Rozładunek towarów, wnoszenie ciężkich przedmiotów na dowolne piętro, przemeblowania. Idealne do zakupów, dostawy mebli czy reorganizacji przestrzeni.</p>
+        <div class="service-tags">
+          <span class="tag">Wnoszenie</span>
+          <span class="tag">Rozładunek</span>
+          <span class="tag">Przemeblowanie</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">03</div>
+        <h3>Transport ze sklepów</h3>
+        <p>Odbiór zakupów z IKEA, Castoramy, OBI, OLX i dowóz pod wskazany adres. Nie musisz martwić się o transport – my zajmiemy się wszystkim.</p>
+        <div class="service-tags">
+          <span class="tag">IKEA</span>
+          <span class="tag">Castorama</span>
+          <span class="tag">OLX</span>
+          <span class="tag">Marketplace</span>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-num">04</div>
+        <h3>Utylizacja i wywóz gabarytów</h3>
+        <p>Opróżnianie piwnic, strychów, garaży. Wywóz starych mebli i gabarytów na PSZOK lub wysypisko. Szybko i bez zbędnych formalności.</p>
+        <div class="service-tags">
+          <span class="tag">PSZOK</span>
+          <span class="tag">Piwnice</span>
+          <span class="tag">Strychy</span>
+          <span class="tag">Gabaryty</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZASIĘG -->
+<section id="zasieg">
+  <div class="zasieg-inner">
+    <div class="fade-up">
+      <div class="section-label">Gdzie działamy</div>
+      <h2>Zasięg: 100 km od Zielonej Góry</h2>
+    </div>
+    <div class="zasieg-grid">
+      <div class="fade-up">
+        <p style="color:var(--muted);margin-bottom:28px;line-height:1.8;">Nasza baza znajduje się w Zielonej Górze. Obsługujemy przeprowadzki i transport na terenie całego województwa lubuskiego oraz w promieniu 100 km od miasta.</p>
+        <ul class="city-list">
+          <li>Zielona Góra <strong style="color:var(--gold);margin-left:4px;">(baza)</strong></li>
+          <li>Nowa Sól</li>
+          <li>Żary</li>
+          <li>Żagań</li>
+          <li>Świebodzin</li>
+          <li>Sulechów</li>
+          <li>Krosno Odrzańskie</li>
+          <li>Gubin / Guben</li>
+          <li>Cottbus (Niemcy)</li>
+          <li>Zgorzelec</li>
+          <li>Głogów</li>
+          <li>Lubin</li>
+        </ul>
+        <p style="color:var(--muted);font-size:13px;margin-top:20px;">Transport poza miastem: 3 zł/km. Nie widzisz swojej miejscowości? Zadzwoń – zapewne też dojedziemy!</p>
+      </div>
+      <div class="fade-up">
+        <div class="map-visual">
+          <div class="map-circle">
+            <div class="map-dot"></div>
+          </div>
+          <div class="map-label">Zasięg działania</div>
+          <div class="map-radius">100 KM</div>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px;">z centrum Zielonej Góry</p>
+        </div>
+        <div style="margin-top:16px;padding:20px 24px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);">
+          <p style="font-size:13px;color:var(--muted);line-height:1.6;">📍 <strong style="color:var(--white);">Darmowa wycena</strong> dla przeprowadzek na terenie Zielonej Góry. Transport poza miastem wyceniamy indywidualnie – zawsze uczciwie i bez niespodzianek.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KALKULATOR -->
+<section id="kalkulator">
+  <div class="calc-wrap">
+    <div class="calc-header fade-up">
+      <div class="section-label">Szybka wycena</div>
+      <h2>Oblicz koszt przeprowadzki</h2>
+      <p style="color:var(--muted);margin-top:8px;">Orientacyjna wycena w kilku krokach. Dokładną cenę potwierdzimy telefonicznie.</p>
+    </div>
+    <div class="calc-box fade-up">
+      <div class="calc-form">
+        <div class="calc-row">
+          <div class="calc-group">
+            <label>Skład ekipy</label>
+            <div class="select-wrapper">
+              <select id="ekipa" onchange="calculate()">
+                <option value="200">Bus + Kierowca (200 zł/h)</option>
+                <option value="250">Bus + Kierowca + 1 Pomocnik (250 zł/h)</option>
+                <option value="350">Bus + Kierowca + 2 Pomocników (350 zł/h)</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-group">
+            <label>Szacowany czas pracy</label>
+            <div class="select-wrapper">
+              <select id="godziny" onchange="calculate()">
+                <option value="1">1 godzina</option>
+                <option value="2">2 godziny</option>
+                <option value="3">3 godziny</option>
+                <option value="4">4 godziny</option>
+                <option value="5">5 godzin</option>
+                <option value="6">6 godzin</option>
+                <option value="8">8 godzin (cały dzień)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-group">
+            <label>Piętro (brak windy)</label>
+            <div class="select-wrapper">
+              <select id="pietro" onchange="calculate()">
+                <option value="0">Parter / 1. piętro (+0 zł/h)</option>
+                <option value="20">2.–3. piętro (+20 zł/h)</option>
+                <option value="50">4.–5. piętro (+50 zł/h)</option>
+                <option value="100">6. piętro i wyżej (+100 zł/h)</option>
+              </select>
+            </div>
+          </div>
+          <div class="calc-group">
+            <label>Lokalizacja</label>
+            <div class="select-wrapper">
+              <select id="lokalizacja" onchange="toggleKm()">
+                <option value="0">Zielona Góra (0 zł)</option>
+                <option value="km">Poza miastem (3 zł/km)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="km-row" class="calc-group" style="display:none;">
+          <label>Odległość od Zielonej Góry (km)</label>
+          <input type="number" id="kilometry" placeholder="np. 30" min="0" max="100" oninput="calculate()">
+        </div>
+        <div class="free-badges">
+          <div class="badge">Weekendy bez dopłat</div>
+          <div class="badge">Last Minute bez dopłat</div>
+          <div class="badge">Folia stretch w cenie</div>
+          <div class="badge">Pasy transportowe w cenie</div>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div>
+          <div class="result-label">Szacowany koszt</div>
+          <div>
+            <span class="price-display" id="price-display">200</span>
+            <span class="price-unit"> zł</span>
+          </div>
+          <div class="price-breakdown" id="price-breakdown">Bus + Kierowca · 1 godz. · Zielona Góra</div>
+        </div>
+        <a href="#kontakt" class="btn-primary">⟶ Zamów wycenę</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="contact-inner">
+    <div class="fade-up">
+      <div class="section-label">Kontakt</div>
+      <h2>Napisz lub zadzwoń</h2>
+      <p style="color:var(--muted);margin-top:8px;max-width:480px;">Darmowa wycena na terenie Zielonej Góry. Odpowiadamy szybko – zadzwoń lub wypełnij formularz.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="contact-detail">
+          <span class="contact-detail-label">Telefon</span>
+          <a href="tel:576407870" class="contact-detail-value">576 407 870</a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">E-mail</span>
+          <a href="/cdn-cgi/l/email-protection#6a0205061319070b18090f062a0d070b030644090507" class="contact-detail-value"><span class="__cf_email__" data-cfemail="7b1314170208161a09181e173b1c161a121755181416">[email&#160;protected]</span></a>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-label">Lokalizacja</span>
+          <span class="contact-detail-value">Zielona Góra, woj. lubuskie</span>
+        </div>
+        <div class="contact-hours">
+          <h4>Godziny dostępności</h4>
+          <p><strong>Pon–Nd:</strong> 7:00 – 21:00</p>
+          <p style="margin-top:8px;">Działamy 7 dni w tygodniu – weekendy bez dopłat.</p>
+        </div>
+      </div>
+      <div class="fade-up">
+        <form
+          class="contact-form"
+          name="kontakt-velar"
+          method="POST"
+          netlify
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="kontakt-velar">
+          <p style="display:none;"><input name="bot-field"></p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Imię / Firma</label>
+              <input type="text" name="imie" placeholder="Jan Kowalski / Firma Sp. z o.o.">
+            </div>
+            <div class="form-group">
+              <label>Telefon <span class="required">*</span></label>
+              <input type="tel" name="telefon" placeholder="576 407 870" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Rodzaj usługi</label>
+            <div class="form-select-wrap">
+              <select name="usluga">
+                <option value="">Wybierz usługę...</option>
+                <option>Przeprowadzka mieszkania</option>
+                <option>Przeprowadzka biura / firmy</option>
+                <option>Pomoc w noszeniu / wnoszeniu</option>
+                <option>Transport ze sklepu (IKEA, Castorama itp.)</option>
+                <option>Utylizacja / opróżnianie piwnicy</option>
+                <option>Inne</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Adres odbioru (Od)</label>
+              <input type="text" name="adres_od" placeholder="ul. Przykładowa 1, Zielona Góra">
+            </div>
+            <div class="form-group">
+              <label>Adres docelowy (Do)</label>
+              <input type="text" name="adres_do" placeholder="ul. Docelowa 5, Nowa Sól">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Piętro</label>
+              <div class="form-select-wrap">
+                <select name="pietro">
+                  <option>Parter</option>
+                  <option>1. piętro</option>
+                  <option>2. piętro</option>
+                  <option>3. piętro</option>
+                  <option>4. piętro</option>
+                  <option>5. piętro</option>
+                  <option>6. piętro i wyżej</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Winda</label>
+              <div class="form-select-wrap">
+                <select name="winda">
+                  <option>Tak – jest winda</option>
+                  <option>Nie – brak windy</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Opis ładunku / dodatkowe informacje</label>
+            <textarea name="opis" rows="4" placeholder="Opisz co trzeba przewieźć, przybliżony termin, dodatkowe uwagi..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Zdjęcia ładunku (opcjonalnie)</label>
+            <label class="file-upload-label" for="zdjecia">📎 Kliknij, aby dodać zdjęcia</label>
+            <input type="file" id="zdjecia" name="zdjecia" multiple accept="image/*">
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+            ⟶ Wyślij zapytanie
+          </button>
+          <div id="form-success" style="display:none;padding:20px 24px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:4px;color:#c9a84c;font-size:14px;text-align:center;margin-top:8px;">
+            ✓ Dziękujemy! Odezwiemy się najszybciej jak to możliwe.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">VELAR</div>
+  <div class="footer-tagline">Transport i Przeprowadzki · Zielona Góra</div>
+  <div class="footer-links">
+    <a href="#o-nas">O nas</a>
+    <a href="#uslugi">Usługi</a>
+    <a href="#zasieg">Zasięg</a>
+    <a href="#kalkulator">Kalkulator</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+  <div class="footer-copy">© 2025 VELAR · Przeprowadzki i Transport Zielona Góra · Wszystkie prawa zastrzeżone</div>
+</footer>
+
+<a href="tel:576407870" class="phone-float" aria-label="Zadzwoń: 576 407 870" title="Zadzwoń teraz">📞</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+    });
+  });
+
+  function calculate() {
+    var ekipa = parseInt(document.getElementById('ekipa').value);
+    var pietro = parseInt(document.getElementById('pietro').value);
+    var godziny = parseInt(document.getElementById('godziny').value);
+    var lokalizacja = document.getElementById('lokalizacja').value;
+    var km = parseFloat(document.getElementById('kilometry').value) || 0;
+
+    var stawka = ekipa + pietro;
+    var koszt = stawka * godziny;
+    var kmKoszt = lokalizacja === 'km' ? km * 3 * 2 : 0;
+    var total = koszt + kmKoszt;
+
+    document.getElementById('price-display').textContent = total;
+
+    var labels = {200:'Bus + Kierowca', 250:'Bus + Kierowca + 1 Pomocnik', 350:'Bus + Kierowca + 2 Pomocników'};
+    var breakdown = labels[ekipa] + ' · ' + godziny + ' godz.';
+    if (pietro > 0) breakdown += ' · Piętro (+' + pietro + ' zł/h)';
+    if (lokalizacja === 'km' && km > 0) breakdown += ' · Dojazd ' + km + ' km';
+    document.getElementById('price-breakdown').textContent = breakdown;
+  }
+
+  function toggleKm() {
+    var loc = document.getElementById('lokalizacja').value;
+    document.getElementById('km-row').style.display = loc === 'km' ? 'flex' : 'none';
+    calculate();
+  }
+
+  document.querySelector('form[name="kontakt-velar"]').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = e.target;
+    var tel = form.querySelector('[name="telefon"]').value;
+    if (!tel) { alert('Podaj numer telefonu – to niezbędne do kontaktu.'); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = '⏳ Wysyłanie...';
+    btn.disabled = true;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+    .then(function() {
+      form.reset();
+      document.getElementById('form-success').style.display = 'block';
+      btn.textContent = '⟶ Wyślij zapytanie';
+      btn.disabled = false;
+    })
+    .catch(function() {
+      alert('Coś poszło nie tak. Zadzwoń: 576 407 870');
+      btn.textContent = '⟶ Wyślij zapytanie';
+      btn.disabled = false;
+    });
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+  calculate();
+</script>
+</body>
+</html>
